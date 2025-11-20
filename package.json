@@ -1,0 +1,35 @@
+{
+  "name": "medical-blind-spot",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Multi-agent system for analyzing blind spots in medical research",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "tsx --env-file=.env src/main.ts",
+    "dev:compare": "DEMO_MODE=compare ARXIV_MAX_RESULTS_DEFAULT=30 tsx --env-file=.env src/main.ts",
+    "dev:recent": "DEMO_MODE=recent tsx --env-file=.env src/main.ts",
+    "dev:llm": "USE_LLM_POPULATION_ANALYSIS=true tsx --env-file=.env src/main.ts",
+    "dev:llm-compare": "USE_LLM_POPULATION_ANALYSIS=true DEMO_MODE=compare tsx --env-file=.env src/main.ts",
+    "build": "tsc",
+    "start": "node --env-file=.env dist/main.js"
+  },
+  "keywords": [
+    "medical",
+    "research",
+    "langgraph",
+    "agents"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@langchain/anthropic": "^0.3.33",
+    "@langchain/core": "^0.3.0",
+    "@langchain/langgraph": "^0.2.0",
+    "dotenv": "^17.2.3"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "tsx": "^4.0.0",
+    "typescript": "^5.3.0"
+  }
+}
